@@ -1,74 +1,94 @@
 
 // Данные для секции навыков
-export const skillsData = [
+export const skillGroupsData = [
   {
-    name: "HTML5/CSS3",
-    level: 95,
-    description: "Семантическая верстка, доступность, БЭМ методология"
+    title: "Frontend разработка",
+    skills: [
+      {
+        name: "HTML5/CSS3",
+        level: 95,
+        description: "Семантическая верстка, адаптивный дизайн, анимации",
+        icon: "Code"
+      },
+      {
+        name: "JavaScript (ES6+)",
+        level: 85,
+        description: "DOM манипуляции, асинхронность, современные API",
+        icon: "FileCode"
+      },
+      {
+        name: "React",
+        level: 80,
+        description: "Хуки, контекст, функциональные компоненты",
+        icon: "Atom"
+      },
+      {
+        name: "TypeScript",
+        level: 75,
+        description: "Типизация, интерфейсы, дженерики",
+        icon: "FileType"
+      }
+    ]
   },
   {
-    name: "JavaScript",
-    level: 85,
-    description: "ES6+, DOM манипуляции, асинхронность"
-  },
-  {
-    name: "React",
-    level: 80,
-    description: "Хуки, контекст, функциональные компоненты"
-  },
-  {
-    name: "Адаптивный дизайн",
-    level: 90,
-    description: "Mobile-first подход, кроссбраузерность"
-  },
-  {
-    name: "Tailwind CSS",
-    level: 88,
-    description: "Компонентный подход, кастомизация"
-  },
-  {
-    name: "Figma в код",
-    level: 92,
-    description: "Точная реализация дизайна в коде"
+    title: "Инструменты и технологии",
+    skills: [
+      {
+        name: "Git & GitHub",
+        level: 85,
+        description: "Контроль версий, совместная работа, CI/CD",
+        icon: "Git"
+      },
+      {
+        name: "Webpack/Vite",
+        level: 70,
+        description: "Настройка сборки, оптимизация, модули",
+        icon: "Package"
+      },
+      {
+        name: "Figma в код",
+        level: 90,
+        description: "Точная реализация дизайна в коде",
+        icon: "Figma"
+      },
+      {
+        name: "Tailwind CSS",
+        level: 88,
+        description: "Компонентный подход, кастомизация",
+        icon: "Brush"
+      }
+    ]
   }
 ];
 
 // Данные для секции проектов
 export const projectsData = [
   {
-    title: "Интернет-магазин обуви",
-    description: "Адаптивный дизайн с анимациями и фильтрацией товаров",
-    image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff",
-    tags: ["HTML", "SCSS", "JavaScript"]
+    title: "Сайт юридической компании",
+    description: "Многостраничный сайт с адаптивным дизайном и продуманной типографикой",
+    image: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f",
+    tags: ["HTML", "SCSS", "JavaScript"],
+    link: "https://example.com/project1"
   },
   {
-    title: "Лендинг для IT-конференции",
-    description: "Страница с параллакс-эффектами и интерактивной программой",
-    image: "https://images.unsplash.com/photo-1505373877841-8d25f7d46678",
-    tags: ["React", "Tailwind", "GSAP"]
+    title: "Интернет-магазин косметики",
+    description: "Каталог товаров с фильтрацией и личным кабинетом",
+    image: "https://images.unsplash.com/photo-1596462502278-27bfdc403348",
+    tags: ["React", "Tailwind", "Redux"],
+    link: "https://example.com/project2"
+  },
+  {
+    title: "Конференция разработчиков",
+    description: "Лендинг для IT-конференции с программой и регистрацией",
+    image: "https://images.unsplash.com/photo-1591115765373-5207764f72e4",
+    tags: ["React", "TypeScript", "GSAP"],
+    link: "https://example.com/project3"
   },
   {
     title: "Дашборд аналитики",
-    description: "Интерфейс с графиками и таблицами для анализа данных",
+    description: "Административная панель с графиками и таблицами данных",
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71",
-    tags: ["React", "MUI", "Chart.js"]
-  },
-  {
-    title: "Приложение для фитнеса",
-    description: "Прогрессивное веб-приложение с трекингом тренировок",
-    image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b",
-    tags: ["PWA", "React", "Firebase"]
-  },
-  {
-    title: "Корпоративный сайт",
-    description: "Многостраничный сайт с интерактивной галереей и блогом",
-    image: "https://images.unsplash.com/photo-1497366811353-6870744d04b2",
-    tags: ["HTML", "CSS", "JavaScript", "PHP"]
-  },
-  {
-    title: "Приложение для заметок",
-    description: "Минималистичный интерфейс с функцией поиска и сортировки",
-    image: "https://images.unsplash.com/photo-1517842645767-c639042777db",
-    tags: ["React", "Redux", "Firebase"]
+    tags: ["React", "Chart.js", "Material UI"],
+    link: "https://example.com/project4"
   }
 ];

@@ -1,90 +1,126 @@
 
+import React from "react";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
 import Icon from "@/components/ui/icon";
 
 const ContactSection = () => {
   return (
-    <section className="py-20 bg-[#1A1F2C] text-white" id="contact">
-      <div className="container max-w-5xl mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-bold mb-12 font-playfair text-center">Связаться со мной</h2>
-        
-        <div className="grid md:grid-cols-2 gap-10">
-          <ContactInformation />
-          <ContactForm />
+    <section className="py-20 min-h-screen flex items-center md:pl-24" id="contact">
+      <div className="container mx-auto px-4">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold mb-2">Связаться со мной</h2>
+          <p className="text-muted-foreground mb-12 text-lg">Готов обсудить ваш проект</p>
+          
+          <div className="grid md:grid-cols-2 gap-10">
+            <ContactInfo />
+            <ContactForm />
+          </div>
         </div>
       </div>
     </section>
   );
 };
 
-const ContactInformation = () => {
+const ContactInfo = () => {
   return (
     <div>
-      <h3 className="text-xl font-bold mb-4">Контактная информация</h3>
-      
-      <div className="space-y-4">
-        <div className="flex items-center gap-3">
-          <Icon name="Mail" className="text-[#9b87f5]" />
-          <span>alexander@example.com</span>
+      <div className="space-y-6 mb-8">
+        <div className="flex items-start gap-4">
+          <div className="shrink-0 p-2 rounded-md bg-primary/10 text-primary">
+            <Icon name="Mail" className="w-5 h-5" />
+          </div>
+          <div>
+            <h3 className="font-medium mb-1">Email</h3>
+            <a href="mailto:hello@example.com" className="text-muted-foreground hover:text-primary transition-colors">
+              hello@example.com
+            </a>
+          </div>
         </div>
-        <div className="flex items-center gap-3">
-          <Icon name="Phone" className="text-[#9b87f5]" />
-          <span>+7 (900) 123-45-67</span>
+        
+        <div className="flex items-start gap-4">
+          <div className="shrink-0 p-2 rounded-md bg-primary/10 text-primary">
+            <Icon name="Phone" className="w-5 h-5" />
+          </div>
+          <div>
+            <h3 className="font-medium mb-1">Телефон</h3>
+            <a href="tel:+79001234567" className="text-muted-foreground hover:text-primary transition-colors">
+              +7 (900) 123-45-67
+            </a>
+          </div>
         </div>
-        <div className="flex items-center gap-3">
-          <Icon name="MapPin" className="text-[#9b87f5]" />
-          <span>Москва, Россия</span>
+        
+        <div className="flex items-start gap-4">
+          <div className="shrink-0 p-2 rounded-md bg-primary/10 text-primary">
+            <Icon name="MapPin" className="w-5 h-5" />
+          </div>
+          <div>
+            <h3 className="font-medium mb-1">Локация</h3>
+            <p className="text-muted-foreground">Москва, Россия</p>
+          </div>
         </div>
       </div>
       
-      <div className="mt-8">
-        <h4 className="text-lg font-bold mb-3">Социальные сети</h4>
-        <div className="flex gap-4">
-          <SocialButton name="Github" />
-          <SocialButton name="Linkedin" />
-          <SocialButton name="Instagram" />
-          <SocialButton name="Telegram" />
+      <div>
+        <h3 className="text-lg font-medium mb-4">Социальные сети</h3>
+        <div className="flex gap-3">
+          <SocialLink name="Github" href="https://github.com/" />
+          <SocialLink name="Linkedin" href="https://linkedin.com/" />
+          <SocialLink name="Telegram" href="https://t.me/" />
+          <SocialLink name="Instagram" href="https://instagram.com/" />
         </div>
       </div>
     </div>
   );
 };
 
-interface SocialButtonProps {
+interface SocialLinkProps {
   name: string;
+  href: string;
 }
 
-const SocialButton = ({ name }: SocialButtonProps) => {
+const SocialLink = ({ name, href }: SocialLinkProps) => {
   return (
-    <Button size="icon" variant="ghost" className="text-[#9b87f5] hover:bg-[#9b87f5]/20">
-      <Icon name={name} size={20} />
-    </Button>
+    <a 
+      href={href} 
+      target="_blank" 
+      rel="noopener noreferrer"
+      className="w-10 h-10 rounded-full flex items-center justify-center bg-slate-100 text-slate-600 hover:bg-primary hover:text-white transition-colors"
+    >
+      <Icon name={name} size={18} />
+    </a>
   );
 };
 
 const ContactForm = () => {
   return (
-    <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg">
-      <h3 className="text-xl font-bold mb-4">Напишите мне</h3>
-      
-      <div className="space-y-4">
-        <div>
-          <label className="block text-sm mb-1">Имя</label>
-          <input type="text" className="w-full p-2 rounded bg-white/5 border border-white/20" />
-        </div>
-        <div>
-          <label className="block text-sm mb-1">Email</label>
-          <input type="email" className="w-full p-2 rounded bg-white/5 border border-white/20" />
-        </div>
-        <div>
-          <label className="block text-sm mb-1">Сообщение</label>
-          <textarea rows={4} className="w-full p-2 rounded bg-white/5 border border-white/20"></textarea>
-        </div>
-        <Button className="w-full bg-[#9b87f5] hover:bg-[#8a76e3]">
-          Отправить сообщение
-        </Button>
+    <form className="space-y-4 p-6 bg-white rounded-lg shadow-sm">
+      <div>
+        <label htmlFor="name" className="block text-sm font-medium mb-1">
+          Имя
+        </label>
+        <Input id="name" placeholder="Ваше имя" />
       </div>
-    </div>
+      
+      <div>
+        <label htmlFor="email" className="block text-sm font-medium mb-1">
+          Email
+        </label>
+        <Input id="email" type="email" placeholder="Ваш email" />
+      </div>
+      
+      <div>
+        <label htmlFor="message" className="block text-sm font-medium mb-1">
+          Сообщение
+        </label>
+        <Textarea id="message" placeholder="Ваше сообщение" rows={5} />
+      </div>
+      
+      <Button className="w-full bg-primary hover:bg-primary/90">
+        Отправить сообщение
+      </Button>
+    </form>
   );
 };
 

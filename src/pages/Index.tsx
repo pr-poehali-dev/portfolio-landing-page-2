@@ -1,10 +1,11 @@
+
 import { useState, useEffect } from "react";
 import Header from "@/components/portfolio/Header";
 import SkillsSection from "@/components/portfolio/SkillsSection";
 import ProjectsSection from "@/components/portfolio/ProjectsSection";
 import ContactSection from "@/components/portfolio/ContactSection";
 import Footer from "@/components/portfolio/Footer";
-import { skillsData, projectsData } from "@/components/portfolio/data";
+import { skillGroupsData, projectsData } from "@/components/portfolio/data";
 
 const Index = () => {
   const [scrollY, setScrollY] = useState(0);
@@ -28,10 +29,10 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-white">
       <Header scrollY={scrollY} />
-      <SkillsSection isLoaded={isLoaded} skills={skillsData} />
       <ProjectsSection projects={projectsData} />
+      <SkillsSection isLoaded={isLoaded} skillGroups={skillGroupsData} />
       <ContactSection />
       <Footer />
     </div>
