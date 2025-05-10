@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import Header from "@/components/portfolio/Header";
 import SkillsSection from "@/components/portfolio/SkillsSection";
@@ -29,7 +28,7 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-black text-white">
       <Header scrollY={scrollY} />
       <ProjectsSection projects={projectsData} />
       <SkillsSection isLoaded={isLoaded} skillGroups={skillGroupsData} />
